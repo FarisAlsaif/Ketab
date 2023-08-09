@@ -1,7 +1,30 @@
 @import '../../../../Styles.scss';
 
 .card{
-    height: 360x;   
-    width: 180px;
+    height: 360px;   
+    width: 240px;
     border: solid 1px $color2;
+    border-radius: 1rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    >.img-con{
+        border-radius:1rem 1rem 0rem 0rem;
+
+        border-bottom: solid 1px $color2;
+        flex:1;
+        display: flex; /* Use flexbox */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        background-color: $color0;
+        >img{   
+            border: solid 1px $color2;
+        }
+
+    }
+    >.des-con{
+        padding: 0 1rem 0 1rem;
+    }
+
 }
