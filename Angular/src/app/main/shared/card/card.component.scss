@@ -1,32 +1,35 @@
 @import '../../../../Styles.scss';
-
 .card{
-    height: 200px;   
-    width: 400px;
-    border: solid 1px $color2;
+    font-family: 'Ruwudu', serif;
+    height:190px;   
+    width: 350px;
+    border: solid 1px #0D0D0D;
     border-radius: 1rem;
-    margin: 2rem;
+    margin: 3rem;
     display: flex;
     flex-direction: row;
 background-color: #ffffff;
     >.img-con{
         border-radius:1rem;
-
-        border-bottom: solid 1px $color2;
+        margin-left: 1rem;
+        border-bottom: solid 1px #0D0D0D;
         flex:1;
         display: flex; /* Use flexbox */
         justify-content: center; /* Center horizontally */
         align-items: center; /* Center vertically */
         background-color: $color0;
         >img{   
-            border: solid 1px $color2;
+            border: solid 1px #0D0D0D;
             border-radius:1rem;
+            height: auto;
+            width: 165px;
         }
 
     }
     >.des-con{
-        padding: 1rem;
-        width: 400px;
+        margin: 0.61rem;
+        font-family: 'Cairo', sans-serif;
+        
     }
 
 }
@@ -52,4 +55,5 @@ a:hover{
     color: #0D0D0D;
     cursor: pointer;
 }
+
 
