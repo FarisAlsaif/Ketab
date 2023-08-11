@@ -43,7 +43,13 @@ a{
     color: black;
     border: solid 1px $color2;
     border-radius: 1rem;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
     background-color: #0D0D0D;
     color: #ffffff;
 }
+a:hover{
+    background-color: #F8F0E5;
+    color: #0D0D0D;
+    cursor: pointer;
+}
+
