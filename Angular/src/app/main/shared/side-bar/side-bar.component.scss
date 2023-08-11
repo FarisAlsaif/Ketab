@@ -2,10 +2,18 @@
 
 div{
     height: 100vh;
-    background-color: $color0;
+    background-color: #F8F0E5;
     padding: 1rem 0rem .5rem 0rem;
     font-size: larger;
     border: solid 1px $color2;
+    display: flexbox;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    align-self: center;
+    text-align: center;
+    
+
     >img{
         align-self: center;
         justify-self: center;
@@ -17,6 +25,10 @@ ul{
     list-style: none;
     padding: 0;
     margin: 0;
+    text-align: left;
+    margin-left: 2rem;
+    font-size: 23px;
+    font-weight: bold;
     >li{
 
         padding: 0;
