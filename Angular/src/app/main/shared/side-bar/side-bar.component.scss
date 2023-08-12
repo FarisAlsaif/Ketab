@@ -29,26 +29,53 @@ ul{
     margin-left: 2rem;
     font-size: 23px;
     font-weight: bold;
+    color:#f6ebdb;
+
     >li{
 
         padding: 0;
-        margin: 0;
+        margin: 1rem;
+        color: #2A160C;
+        padding: 0.51rem;
+        
+            
+
+
 
     &:hover{
-        background-color: $color1;
         border-radius: 5px;
         cursor: pointer;
+        border-radius: 2rem;
+        background-color: #2A160C;
+        color: #f6ebdb;
+
+        
     }
 
-        >a{
+        >a {
             display: block;
             padding: 0.5rem 1rem 0.5rem 1rem;
             text-decoration: none;
-            color: $black;
+            color: #2A160C;
             width: 100%;
             height: 100%;
             align-content: center;
             justify-content: center;
+
+        }
+        >a:hover{
+            display: block;
+            padding: 0.5rem 1rem 0.5rem 1rem;
+            text-decoration: none;
+            background-color: #2A160C;
+            color: #f6ebdb;
+            width: 100%;
+            height: 100%;
+            align-content: center;
+            justify-content: center;
+            border-radius: 5px;
+        
+
 
         }
     }
