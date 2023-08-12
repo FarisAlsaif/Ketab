@@ -1,30 +1,59 @@
 @import '../../../../Styles.scss';
-
 .card{
-    height: 360px;   
-    width: 240px;
-    border: solid 1px $color2;
+    font-family: 'Ruwudu', serif;
+    height:190px;   
+    width: 350px;
+    border: solid 1px #0D0D0D;
     border-radius: 1rem;
-    margin: 1rem;
+    margin: 3rem;
     display: flex;
-    flex-direction: column;
-
+    flex-direction: row;
+background-color: #ffffff;
     >.img-con{
-        border-radius:1rem 1rem 0rem 0rem;
-
-        border-bottom: solid 1px $color2;
+        border-radius:1rem;
+        margin-left: 1rem;
+        border-bottom: solid 1px #0D0D0D;
         flex:1;
         display: flex; /* Use flexbox */
         justify-content: center; /* Center horizontally */
         align-items: center; /* Center vertically */
         background-color: $color0;
         >img{   
-            border: solid 1px $color2;
+            border: solid 1px #0D0D0D;
+            border-radius:1rem;
+            height: auto;
+            width: 165px;
         }
 
     }
     >.des-con{
-        padding: 0 1rem 0 1rem;
+        margin: 0.61rem;
+        font-family: 'Cairo', sans-serif;
+        
     }
 
 }
+.container{
+    margin: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    
+    background-color: #F8F0E5;
+    
+}
+a{
+    text-decoration: none;
+    color: black;
+    border: solid 1px $color2;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    background-color: #0D0D0D;
+    color: #ffffff;
+}
+a:hover{
+    background-color: #F8F0E5;
+    color: #0D0D0D;
+    cursor: pointer;
+}
+
+
