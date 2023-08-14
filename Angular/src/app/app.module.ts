@@ -7,6 +7,8 @@ import { SharedModule } from './main/shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
 import { BooksComponent } from './main/books/books/books.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { BooksComponent } from './main/books/books/books.component';
     BooksComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     SharedModule,
     FontAwesomeModule,

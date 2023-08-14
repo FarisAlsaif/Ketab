@@ -4,7 +4,8 @@
 .main{
     font-family: 'Exo', sans-serif;
     background-color: #F8F0E5;
-    display: flex;
+    display: flex;   
+    height: 100vh;
     padding: 0;
     margin: 0;
 
@@ -13,5 +14,7 @@
     }
     >.content{
         flex: 5 ;
+        overflow-y:scroll;
+        overflow-x: hidden;
     }
 }
