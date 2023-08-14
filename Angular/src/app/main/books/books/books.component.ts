@@ -12,7 +12,7 @@ export class BooksComponent {
 
   ngOnInit(): void {
     this.headerService.setHeader({
-      title: 'Dashboard',
+      title: 'Books',
       back: true,
     });
   }
