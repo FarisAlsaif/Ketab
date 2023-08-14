@@ -27,8 +27,4 @@ export class BooksService {
     });
     return this.books;
   }
-
-
-
-
 }
