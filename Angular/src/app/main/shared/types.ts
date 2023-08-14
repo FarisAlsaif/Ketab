@@ -5,3 +5,11 @@ export interface page {
     path: string;
     icon: string;
 }
+
+export interface book {
+    id: number;
+    title: string;
+    authors: string[];
+    image: string;
+    webReaderLink: string;
+}

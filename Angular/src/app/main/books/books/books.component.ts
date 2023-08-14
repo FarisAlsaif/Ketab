@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { BooksService } from 'src/app/services/books/books.service';
 import { HeaderService } from 'src/app/services/header/header.service';
+import { book } from '../../shared/types';
 
 @Component({
   selector: 'app-books',
@@ -8,13 +10,20 @@ import { HeaderService } from 'src/app/services/header/header.service';
 })
 export class BooksComponent {
 
-  constructor(private headerService: HeaderService) { }
+  books:book[] = [];
+
+  constructor(
+    private headerService: HeaderService,
+    private booksService: BooksService,
+    ) { }
 
   ngOnInit(): void {
     this.headerService.setHeader({
       title: 'Books',
       back: true,
     });
+    this.books = this.booksService.getBooks();
+
   }
   ngOnDestroy(): void {
     this.headerService.resetHeader();

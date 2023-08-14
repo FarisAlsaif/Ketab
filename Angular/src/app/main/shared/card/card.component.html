@@ -1,43 +1,13 @@
 <div class="container">
-  <div class="card">
+  <div class="card" *ngFor="let book of books">
     <div class="img-con">
-      <img src="assets/book1.jpeg" alt="img" height="250px" width="auto" />
+      <img src="{{book.image}}" alt="img" height="250px" width="auto" />
     </div>
     <div class="des-con">
-      <h2>نزهة المشتاق في اختراق الآفاق</h2>
-      <h4>الشريف الإدريسي</h4>
+      <h2>{{book.title}}</h2>
+      <h4>{{book.authors}}</h4>
 
-      <a href="">قراءة</a>
-    </div>
-  </div>
-  <div class="card">
-    <div class="img-con">
-      <img src="assets/book1.jpeg" alt="img" height="250px" width="auto" />
-    </div>
-    <div class="des-con">
-      <h2>نزهة المشتاق في اختراق الآفاق</h2>
-      <h4>الشريف الإدريسي</h4>
-      <a href="">قراءة</a>
-    </div>
-  </div>
-  <div class="card">
-    <div class="img-con">
-      <img src="assets/book1.jpeg" alt="img" height="250px" width="auto" />
-    </div>
-    <div class="des-con">
-      <h2>نزهة المشتاق في اختراق الآفاق</h2>
-      <h4>الشريف الإدريسي</h4>
-      <a href="">قراءة</a>
-    </div>
-  </div>
-  <div class="card">
-    <div class="img-con">
-      <img src="assets/book1.jpeg" alt="img" height="250px" width="auto" />
-    </div>
-    <div class="des-con">
-      <h2>نزهة المشتاق في اختراق الآفاق</h2>
-      <h4>الشريف الإدريسي</h4>
-      <a href="">قراءة</a>
+      <a href="{{book.webReaderLink}}">قراءة</a>
     </div>
   </div>
 </div>
