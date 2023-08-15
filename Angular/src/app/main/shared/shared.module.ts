@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { Router, RouterModule } from '@angular/router';
 import { CardComponent } from './card/card.component';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -12,6 +13,7 @@ import { CardComponent } from './card/card.component';
     HeaderComponent,
     SideBarComponent,
     CardComponent,
+    SearchComponent,
   ],
   imports: [
     CommonModule,
@@ -21,6 +23,7 @@ import { CardComponent } from './card/card.component';
     HeaderComponent,
     SideBarComponent,
     CardComponent,
+    SearchComponent,
   ]
 })
 export class SharedModule { }

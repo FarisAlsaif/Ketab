@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HeaderService } from 'src/app/services/header/header.service';
-
+import { BooksService } from 'src/app/services/books/books.service';
+import { book } from '../../shared/types';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -8,13 +9,21 @@ import { HeaderService } from 'src/app/services/header/header.service';
 })
 export class DashboardComponent implements OnDestroy, OnInit {
 
-  constructor(private headerService: HeaderService) { }
+  
+  books:book[] = [];
+
+  constructor(
+    private headerService: HeaderService,
+    private booksService: BooksService,
+    ) { }
 
   ngOnInit(): void {
     this.headerService.setHeader({
-      title: 'Dashboard',
-      back: false,
+      title: 'Books',
+      back: true,
     });
+    this.books = this.booksService.getBooks();
+
   }
   ngOnDestroy(): void {
     this.headerService.resetHeader();
