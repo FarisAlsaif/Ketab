@@ -8,7 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
 import { BooksComponent } from './main/books/books/books.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { SearchComponent } from './main/shared/search/search.component';
 
 @NgModule({
   declarations: [
