@@ -2,7 +2,7 @@
 .card{
     font-family: 'Ruwudu', serif;
     height:190px;   
-    width: 350px;
+    width: 440px;
     border: solid 1px #0D0D0D;
     border-radius: 1rem;
     margin: 1.5rem;
@@ -18,17 +18,26 @@ background-color: #ffffff;
         justify-content: center; /* Center horizontally */
         align-items: center; /* Center vertically */
         background-color: $color0;
+        width: 170px;
         >img{   
             border: solid 1px #0D0D0D;
             border-radius:1rem;
-            height: auto;
-            width: 160px;
+            height: 210px;
+            width: 170px;
         }
 
     }
     >.des-con{
         margin: 0.61rem;
         font-family: 'Cairo', sans-serif;
+        >h4{
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1rem 0 0.5rem 0;
+            padding: 0.5rem;
+            border-radius: 1rem;
+            background-color: #F8F0E5;
+        }
         
     }
 
@@ -54,6 +63,12 @@ a:hover{
     background-color: #F8F0E5;
     color: #0D0D0D;
     cursor: pointer;
+}
+h2{
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0.5rem;
 }
 
 
