@@ -71,4 +71,29 @@ h2{
     margin: 0.5rem;
 }
 
+.search{
+    margin: 1rem;
+    margin-right:6rem ;
+    background-color: #d9ccbb;
+    border-radius: 1rem;
+    padding: 1rem;
+    
+    >input{
+        border: solid 1px #0D0D0D;
+        border-radius: 1rem;
+        padding: 0.5rem;
+        background-color: #fff;  
+        padding: 0.7rem;
+        width: 20rem;
+        
+    }
+    >button{
+        border: solid 1px #0D0D0D;
+        border-radius: 1rem;
+        padding: 0.5rem;
+        background-color: #0D0D0D;
+        color: #ffffff;
+        margin-right: 0.5rem;
+    }
+}
 
