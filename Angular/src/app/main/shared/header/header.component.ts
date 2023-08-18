@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { HeaderService,header } from 'src/app/services/header/header.service';
@@ -10,7 +10,9 @@ import { HeaderService,header } from 'src/app/services/header/header.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  query: string = '';
 
+  @Output() search = new EventEmitter<string>();
   @Input() title: string='false';
   @Input() back: boolean=false;
   private headerSubscription: Subscription;

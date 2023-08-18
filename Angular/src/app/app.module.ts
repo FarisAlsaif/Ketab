@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { BooksComponent } from './main/books/books/books.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './main/shared/search/search.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,8 @@ import { SearchComponent } from './main/shared/search/search.component';
     BrowserModule,
     SharedModule,
     FontAwesomeModule,
+    FormsModule,
+
     RouterModule.forRoot([
       {
         path: 'dashboard',

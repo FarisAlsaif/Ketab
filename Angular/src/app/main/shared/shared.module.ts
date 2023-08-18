@@ -5,6 +5,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { Router, RouterModule } from '@angular/router';
 import { CardComponent } from './card/card.component';
 import { SearchComponent } from './search/search.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +18,8 @@ import { SearchComponent } from './search/search.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports: [
     HeaderComponent,

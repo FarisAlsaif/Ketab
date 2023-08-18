@@ -1,3 +1,16 @@
+<div class="search">
+  <input
+    type="text"
+    name="search"
+    [(ngModel)]="query"
+    (input)="search()"
+    placeholder="write the book name"
+  />
+  <button type="button" (click)="search()">
+    <i class="fas fa-search"></i>
+  </button>
+</div>
+
 <div class="container">
   <div class="card" *ngFor="let book of books">
     <div class="img-con">
