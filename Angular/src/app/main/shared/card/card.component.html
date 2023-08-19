@@ -4,8 +4,8 @@
       <img src="{{ book.image }}" alt="img" />
     </div>
     <div class="des-con">
-      <h2>{{ book.title }}</h2>
-      <h4>{{ book.authors }}</h4>
+      <h2>{{ book.title | stringReduce  }}</h2>
+      <h4 *ngFor="let author of book.authors" >{{ author | stringReduce }}</h4>
 
       <a href="{{ book.webReaderLink }}">Read</a>
     </div>

@@ -6,6 +6,8 @@ import { Router, RouterModule } from '@angular/router';
 import { CardComponent } from './card/card.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
+import { StringReducePipe } from '../../pipes/string-reduce/string-reduce.pipe';
+
 
 
 
@@ -15,11 +17,13 @@ import { FormsModule } from '@angular/forms';
     SideBarComponent,
     CardComponent,
     SearchComponent,
+    StringReducePipe
   ],
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+
   ],
   exports: [
     HeaderComponent,

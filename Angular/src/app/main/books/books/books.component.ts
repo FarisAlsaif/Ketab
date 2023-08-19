@@ -28,5 +28,7 @@ export class BooksComponent {
   ngOnDestroy(): void {
     this.headerService.resetHeader();
   }
-
+  setBooks(value:book[]){
+    this.books = value;
+  }
 }

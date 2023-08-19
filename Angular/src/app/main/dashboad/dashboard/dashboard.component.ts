@@ -14,7 +14,5 @@ export class DashboardComponent {
   [x: string]: any;
   query: string ="" ;
   results: any[] | undefined;
-
-
   
 }

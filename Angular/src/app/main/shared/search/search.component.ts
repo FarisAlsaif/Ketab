@@ -1,15 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { book } from '../types';
 import { SearchService } from 'src/app/services/search/search.service';
+import { Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements  OnInit{
-  query:string='il';
-  books: book[] = [];
+  query:string=' ';
+
+ @Output() bookResearchResultEmitter =  new EventEmitter<book[]>
 
   constructor(
     private searchService: SearchService,
@@ -19,9 +20,9 @@ export class SearchComponent implements  OnInit{
     
 
   }
-  search(){
-    this.books = this.searchService.getBooks(this.query);
-
+  search(value:string){
+    console.log("in search")
+    this.bookResearchResultEmitter.emit(this.searchService.getBooks(value));
   }
   
 } 

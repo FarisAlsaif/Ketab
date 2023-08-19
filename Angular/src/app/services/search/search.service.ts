@@ -11,7 +11,9 @@ export class SearchService {
   constructor(private httpClient: HttpClient) {}
   
   getBooks(query: string) {
-   const booksUrl = `https://www.googleapis.com/books/v1/volumes?q=${query}`;
+
+   try {
+    const booksUrl = `https://www.googleapis.com/books/v1/volumes?q=${query}`;
    this.httpClient.get(booksUrl).subscribe((data:any) => {
      this.books=[]
      data.items.forEach((item:any) => {
@@ -26,5 +28,9 @@ export class SearchService {
      });
    });
    return this.books;
+   } catch (error) {
+    console.log(error);
+    return this.books
+   }
  }
 }
