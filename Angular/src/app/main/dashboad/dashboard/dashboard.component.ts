@@ -1,9 +1,9 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { HeaderService } from 'src/app/services/header/header.service';
-import { BooksService } from 'src/app/services/books/books.service';
+import { HeaderService } from 'src/app/main/shared/services/header/header.service';
+import { BooksService } from 'src/app/main/shared/services/books/books.service';
 import { book } from '../../shared/types';
-import { SearchService } from 'src/app/services/search/search.service';
-import { SearchComponent } from '../../shared/search/search.component';
+import { SearchService } from 'src/app/main/shared/services/search/search.service';
+import { SearchComponent } from '../../shared/components/search/search.component';
 
 @Component({
   selector: 'app-dashboard',

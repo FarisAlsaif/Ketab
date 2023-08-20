@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { BooksService } from 'src/app/services/books/books.service';
-import { HeaderService } from 'src/app/services/header/header.service';
+import { BooksService } from 'src/app/main/shared/services/books/books.service';
+import { HeaderService } from 'src/app/main/shared/services/header/header.service';
 import { book } from '../../shared/types';
 
 @Component({

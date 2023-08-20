@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { book } from '../../main/shared/types'
-import { SearchComponent } from 'src/app/main/shared/search/search.component';
+import { book } from '../../types'
+import { SearchComponent } from 'src/app/main/shared/components/search/search.component';
 
 @Injectable({
   providedIn: 'root'

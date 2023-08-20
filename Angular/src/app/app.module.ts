@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './main/dashboad/dashboard/dashboard.component';
-import { FLUCPipe } from './pipes/fluc.pipe';
 import { SharedModule } from './main/shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
@@ -14,7 +13,6 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     DashboardComponent,
-    FLUCPipe,
     BooksComponent,
   ],
   imports: [

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
-import { HeaderService,header } from 'src/app/services/header/header.service';
+import { HeaderService,header } from 'src/app/main/shared/services/header/header.service';
 
 
 @Component({

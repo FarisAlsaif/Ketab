@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { book } from '../../main/shared/types'
+import { book } from '../../types'
 
 @Injectable({
   providedIn: 'root'
 })
 export class BooksService {
 
-  booksUrl = 'https://www.googleapis.com/books/v1/volumes?q=quilting';
+  booksUrl = 'https://www.googleapis.com/books/v1/volumes?q=Arab';
    books:book[] = [];
 
   constructor(private httpClient: HttpClient) {}

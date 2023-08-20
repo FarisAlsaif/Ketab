@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { book } from '../types';
-import { SearchService } from 'src/app/services/search/search.service';
+import { book } from '../../types';
+import { SearchService } from 'src/app/main/shared/services/search/search.service';
 import { Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-search',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { page } from '../types';
+import { page } from '../../types';
 
 @Component({
   selector: 'app-side-bar',
