@@ -21,7 +21,7 @@ export class SearchComponent implements  OnInit{
 
   }
   search(value:string){
-    console.log("in search")
+    const books = this.searchService.getBooks(value);
     this.bookResearchResultEmitter.emit(this.searchService.getBooks(value));
   }
   

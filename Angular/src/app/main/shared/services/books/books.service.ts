@@ -13,18 +13,27 @@ export class BooksService {
   constructor(private httpClient: HttpClient) {}
   
   getBooks() {
-    this.httpClient.get(this.booksUrl).subscribe((data:any) => {
-      data.items.forEach((item:any) => {
-        let book:book = {
-          id: item.id,
-          title: item.volumeInfo.title,
-          authors: item.volumeInfo.authors,
-          image:  item.volumeInfo.imageLinks.thumbnail || item.volumeInfo.imageLinks.smallThumbnail,
-          webReaderLink: item.accessInfo.webReaderLink,
-  }
-        this.books.push(book);
-      });
+    this.httpClient.get(this.booksUrl).subscribe({
+      next: (data:any) => {
+        data.items.forEach((item:any) => {
+          let book:book = {
+            id: item.id,
+            title: item.volumeInfo.title,
+            authors: item.volumeInfo.authors,
+            image:  item.volumeInfo.imageLinks?.thumbnail || item.volumeInfo.imageLinks?.smallThumbnail || 'https://via.placeholder.com/150',
+            webReaderLink: item.accessInfo.webReaderLink,
+    }
+          this.books.push(book);
+        });
+      },
+      error: (error) => {
+        console.log(error.message);
+      },
+      complete: () => {
+        console.log('complete');
+      }
     });
     return this.books;
   }
+
 }

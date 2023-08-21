@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { BooksService } from 'src/app/main/shared/services/books/books.service';
 import { HeaderService } from 'src/app/main/shared/services/header/header.service';
 import { book } from '../../shared/types';
@@ -8,7 +8,7 @@ import { book } from '../../shared/types';
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.scss']
 })
-export class BooksComponent {
+export class BooksComponent implements  OnInit {
 
   books:book[] = [];
 
@@ -16,6 +16,7 @@ export class BooksComponent {
     private headerService: HeaderService,
     private booksService: BooksService,
     ) { }
+
 
   ngOnInit(): void {
     this.headerService.setHeader({
@@ -27,8 +28,5 @@ export class BooksComponent {
   }
   ngOnDestroy(): void {
     this.headerService.resetHeader();
-  }
-  setBooks(value:book[]){
-    this.books = value;
   }
 }
