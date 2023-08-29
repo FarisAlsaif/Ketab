@@ -1,36 +1,39 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { book } from '../../types'
-import { SearchComponent } from 'src/app/main/shared/components/search/search.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchService {
-  books:book[] = [];
   constructor(private httpClient: HttpClient) {}
   
   getBooks(query: string) {
-
+    const   books:book[] = [];
    try {
     const booksUrl = `https://www.googleapis.com/books/v1/volumes?q=${query}`;
-   this.httpClient.get(booksUrl).subscribe((data:any) => {
-     this.books=[]
-     data.items.forEach((item:any) => {
-       let book:book = {
-         id: item.id,
-         title: item.volumeInfo.title,
-         authors: item.volumeInfo.authors,
-         image:  item.volumeInfo.imageLinks.thumbnail || item.volumeInfo.imageLinks.smallThumbnail,
-         webReaderLink: item.accessInfo.webReaderLink,
- }
-       this.books.push(book);
-     });
-   });
-   return this.books;
-   } catch (error) {
-    console.log(error);
-    return this.books
+   this.httpClient.get(booksUrl).subscribe({
+      next: (data:any) => {
+        data.items.forEach((item:any) => {
+          let book:book = {
+            id: item.id,
+            title: item.volumeInfo.title,
+            authors: item.volumeInfo.authors,
+            image:  item.volumeInfo.imageLinks?.thumbnail || item.volumeInfo.imageLinks?.smallThumbnail || 'https://via.placeholder.com/150',
+            webReaderLink: item.accessInfo.webReaderLink,
    }
+          books.push(book);
+        });
+      },
+      error: (error) => {
+        console.log(error.message);
+      }
+    });
+    return books;
+    } catch (error) {
+      console.log(error);
+    }
+    return books;
+    
  }
 }

@@ -8,6 +8,7 @@ import { Output, EventEmitter } from '@angular/core';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements  OnInit{
+  
   query:string=' ';
 
  @Output() bookResearchResultEmitter =  new EventEmitter<book[]>
@@ -21,8 +22,7 @@ export class SearchComponent implements  OnInit{
 
   }
   search(value:string){
-    console.log("in search")
+    const books = this.searchService.getBooks(value);
     this.bookResearchResultEmitter.emit(this.searchService.getBooks(value));
   }
-  
 } 
