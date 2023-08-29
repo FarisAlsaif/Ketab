@@ -6,10 +6,10 @@ import { book } from '../../types'
   providedIn: 'root'
 })
 export class SearchService {
-  books:book[] = [];
   constructor(private httpClient: HttpClient) {}
   
   getBooks(query: string) {
+    const   books:book[] = [];
    try {
     const booksUrl = `https://www.googleapis.com/books/v1/volumes?q=${query}`;
    this.httpClient.get(booksUrl).subscribe({
@@ -22,18 +22,18 @@ export class SearchService {
             image:  item.volumeInfo.imageLinks?.thumbnail || item.volumeInfo.imageLinks?.smallThumbnail || 'https://via.placeholder.com/150',
             webReaderLink: item.accessInfo.webReaderLink,
    }
-          this.books.push(book);
+          books.push(book);
         });
       },
       error: (error) => {
         console.log(error.message);
       }
     });
-    return this.books;
+    return books;
     } catch (error) {
       console.log(error);
     }
-    return this.books;
+    return books;
     
  }
 }
