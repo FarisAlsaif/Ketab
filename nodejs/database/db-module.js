@@ -11,6 +11,7 @@ initializeApp({
 const db = getFirestore();
 const collections = db.collection("book");
 
-console.log(collections);
 
-exports.db = db;
+
+
+module.exports = db;

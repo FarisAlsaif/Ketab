@@ -8,12 +8,18 @@ import { RouterModule } from '@angular/router';
 import { BooksComponent } from './main/books/books/books.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MybooksComponent } from './main/books/mybooks/mybooks.component';
+import { LoginComponent } from './main/auth/login/login.component';
+import { RegisterComponent } from './main/auth/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     BooksComponent,
+    MybooksComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     HttpClientModule,
@@ -30,6 +36,10 @@ import { FormsModule } from '@angular/forms';
       {
         path: 'books',
         component: BooksComponent
+      },
+      {
+        path: 'mybooks',
+        component: MybooksComponent
       },
       {
         path: '**',

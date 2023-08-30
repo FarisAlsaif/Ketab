@@ -1,16 +1,15 @@
-const express = require('express');
-const router = express.Router();
+const  db  = require('../database/db-module');
 
-booksSearch = "https://www.googleapis.com/books/v1/volumes?q=search+terms"
 
-router.get('/books', (req, res) => {
-    axios.get(booksSearch+req.query.search)
-    .then(response => {
-        res.json(response.data);
-    })
-    .catch(error => {
-        res.status(500).json({ error: 'An error occurred while fetching data from the Google Books API.' });
-    });
-}); 
-
-module.exports = router;
+function getBooks() {
+    return collections.get();
+  }
+  
+async function getMyBooks(username){
+    console.log(typeof(username));
+    const myBooksRef =  db.collection("Mybooks").doc(username);
+    doc = await myBooksRef.get();
+    return doc.data();
+  }
+  
+module.exports = {getBooks, getMyBooks};
