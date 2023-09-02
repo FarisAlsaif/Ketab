@@ -7,7 +7,7 @@ export interface page {
 }
 
 export interface book {
-    id: number;
+    id: string;
     title: string;
     authors: string[];
     image: string;
