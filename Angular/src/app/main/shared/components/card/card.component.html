@@ -8,6 +8,7 @@
       <h4 *ngFor="let author of book.authors" >{{ author | stringReduce }}</h4>
 
       <a href="{{ book.webReaderLink }}">Read</a>
+      <button (click)="booksService.addToMyBooks(book.id)">Add</button>
     </div>
   </div>
 </div>
