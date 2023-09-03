@@ -11,11 +11,7 @@ router.get('/:username', async (req, res) => {
 router.post('/login', async (req, res) => {
     try {
         const { username, password } = req.body;
-
-        console.log(username, password);
-
         const match = await auth.authenticateUser(username, password);
-
         res.send(match);
     } catch (error) {
         res.status(401).json({ error: 'Authentication failed' });

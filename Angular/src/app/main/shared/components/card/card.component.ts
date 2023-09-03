@@ -10,6 +10,8 @@ import { BooksService } from '../../services/books/books.service';
 export class CardComponent{
 
 
+  constructor(public booksService: BooksService) { }
+
 private  _books: book[] = [];
 
 @Input() get books(): book[] {

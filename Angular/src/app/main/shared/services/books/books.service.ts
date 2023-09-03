@@ -62,7 +62,6 @@ export class BooksService {
           })}
             
         )
-      console.log(myBooks);
       }
             ,
       error: (error) => {console.log(error.message)},
