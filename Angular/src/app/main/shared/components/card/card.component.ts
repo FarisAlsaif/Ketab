@@ -20,7 +20,4 @@ private  _books: book[] = [];
   this._books = value;
 }
 
- ngOnChanges(changes: SimpleChanges): void {
-  console.log(changes);
-}
 }
