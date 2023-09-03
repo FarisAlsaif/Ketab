@@ -6,7 +6,7 @@ import { book } from '../../types';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent implements OnChanges {
+export class CardComponent  {
 
 
 private  _books: book[] = [];
@@ -19,7 +19,4 @@ private  _books: book[] = [];
   this._books = value;
 }
 
- ngOnChanges(changes: SimpleChanges): void {
-  console.log(changes);
-}
 }

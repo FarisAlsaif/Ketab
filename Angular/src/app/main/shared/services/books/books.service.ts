@@ -35,9 +35,7 @@ export class BooksService {
       error: (error) => {
         console.log(error.message);
       },
-      complete: () => {
-        console.log('complete');
-      }
+
     });
     return books;
   }
@@ -65,7 +63,6 @@ export class BooksService {
           })}
             
         )
-      console.log(myBooks);
       }
             ,
       error: (error) => {console.log(error.message)},

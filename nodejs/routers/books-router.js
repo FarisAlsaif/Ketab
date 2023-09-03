@@ -3,9 +3,11 @@ const router = express.Router();
 const books = require('../modules/books');
 
 
-router.get('/books/:username', async (req, res) => {
+router.get('/:username', async (req, res) => {
     
-        res.send(await books.getMyBooks(String(req.params.username)));  
+        const username = String(req.params.username).toLocaleLowerCase;
+        res.send(await books.getMyBooks(username));  
 }); 
+
 
 module.exports = router;
