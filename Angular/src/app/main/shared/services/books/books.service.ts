@@ -35,7 +35,6 @@ export class BooksService {
       error: (error) => {
         console.log(error.message);
       },
-
     });
     return books;
   }
@@ -74,8 +73,17 @@ export class BooksService {
   }
   
 
-  addToMyBooks(book:book){
-    this.httpClient.post('https://localhost:4000/api/Books', book)
+  addToMyBooks(bookid:String){
+    const bookref = {bookref:bookid}
+    this.httpClient.post(`http://localhost:4000/api/books/add/Faris`, bookref)
+    .subscribe(
+      (response) => {
+        console.log('POST request successful:', response);
+      },
+      (error) => {
+        console.error('POST request failed:', error);
+      }
+    )
   }
 
 

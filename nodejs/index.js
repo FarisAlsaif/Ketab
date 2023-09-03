@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "../angular/dist/angular")));
 
-app.use("/api/books", booksRouter);
+app.use("/api", booksRouter);
 app.use("/api/auth", authRouter);
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

@@ -1,3 +1,5 @@
+const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
+const { getFirestore, Timestamp, FieldValue, Filter } = require('firebase-admin/firestore');
 const  db  = require('../database/db-module');
 
 
@@ -6,10 +8,18 @@ function getBooks() {
   }
   
 async function getMyBooks(username){
-    console.log(typeof(username));
     const myBooksRef =  db.collection("Mybooks").doc(username);
     doc = await myBooksRef.get();
     return doc.data();
   }
   
-module.exports = {getBooks, getMyBooks};
+async function addBook(username,book){
+    const bookRef =  db.collection("Mybooks").doc(username);
+    await bookRef.update({
+      bookref: FieldValue.arrayUnion(book.bookref)
+    })
+    return book;
+  }
+
+
+module.exports = {getBooks, getMyBooks, addBook};

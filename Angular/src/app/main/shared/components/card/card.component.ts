@@ -1,12 +1,13 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { book } from '../../types';
+import { BooksService } from '../../services/books/books.service';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent  {
+export class CardComponent{
 
 
 private  _books: book[] = [];
@@ -19,4 +20,7 @@ private  _books: book[] = [];
   this._books = value;
 }
 
+ ngOnChanges(changes: SimpleChanges): void {
+  console.log(changes);
+}
 }
