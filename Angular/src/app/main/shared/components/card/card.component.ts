@@ -7,7 +7,7 @@ import { BooksService } from '../../services/books/books.service';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent {
+export class CardComponent{
 
 
 private  _books: book[] = [];
@@ -20,9 +20,7 @@ private  _books: book[] = [];
   this._books = value;
 }
 
-constructor(public booksService:BooksService) { }
-
-addtoMybooks(bookref:string){
-  
+ ngOnChanges(changes: SimpleChanges): void {
+  console.log(changes);
 }
 }
