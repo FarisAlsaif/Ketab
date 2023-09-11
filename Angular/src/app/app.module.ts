@@ -6,11 +6,15 @@ import { SharedModule } from './main/shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
 import { BooksComponent } from './main/books/books/books.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MybooksComponent } from './main/books/mybooks/mybooks.component';
-import { LoginComponent } from './main/auth/login/login.component';
-import { RegisterComponent } from './main/auth/register/register.component';
+import { InterceptorServiceService } from './main/shared/services/interceptor-service.service';
+import { AuthModule } from './main/auth/auth.module';
+import { ProfileComponent } from './main/profile/profile.component';
+import { AppRoutingModule } from './main/app-routing/app-routing.module';
+import { HomeComponent } from './main/home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -18,8 +22,9 @@ import { RegisterComponent } from './main/auth/register/register.component';
     DashboardComponent,
     BooksComponent,
     MybooksComponent,
-    LoginComponent,
-    RegisterComponent,
+    ProfileComponent,
+    HomeComponent,
+
   ],
   imports: [
     HttpClientModule,
@@ -27,28 +32,16 @@ import { RegisterComponent } from './main/auth/register/register.component';
     SharedModule,
     FontAwesomeModule,
     FormsModule,
-
-    RouterModule.forRoot([
-      {
-        path: 'dashboard',
-        component: DashboardComponent
-      },
-      {
-        path: 'books',
-        component: BooksComponent
-      },
-      {
-        path: 'mybooks',
-        component: MybooksComponent
-      },
-      {
-        path: '**',
-        redirectTo: 'dashboard'
-      }
-    ])
+    AuthModule,
+    RouterModule,
+    AppRoutingModule,
 
   ],
-  providers: [],
+  providers: [
+{    provide: HTTP_INTERCEPTORS,
+    useClass: InterceptorServiceService,
+    multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

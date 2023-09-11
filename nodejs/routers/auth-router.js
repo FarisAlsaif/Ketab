@@ -1,29 +1,58 @@
 const express = require('express');
-const router = express.Router();
-const auth = require('../modules/auth');
+const jwt = require('jsonwebtoken');
+const md5 = require('md5');
 
-router.get('/:username', async (req, res) => {
-        
-          try {
-            const username = String(req.params.username).toLocaleLowerCase();
-            res.send(await auth.isUserExist(username));  
-          } catch (error) {
-            res.status(404).json({ error: 'not found' });   
-          }
+
+const router = express.Router();
+const db = require('../database/db-module');
+
+router.post('/register', async function (req, res, next) {
+    try {
+        let { username, email, password } = req.body;
+
+        const hashed_password = md5(password.toString())
+        const checkUsername = `Select username FROM users WHERE username = ?`;
+        db.query(checkUsername, [username], (err, result, fields) => {
+            if (!result.length) {
+                const sql = `Insert Into users (username, email, password) VALUES ( ?, ?, ? )`
+                db.query(
+                    sql, [username, email, hashed_password],
+                    (err, result, fields) => {
+                        if (err) {
+                            res.send({ status: 0, data: err });
+                        } else {
+                            let token = jwt.sign({ data: result }, 'secret')
+                            res.send({ status: 1, data: result, token: token });
+                        }
+
+                    })
+            }
+        });
+    } catch (error) {
+        res.send({ status: 0, error: error });
     }
-);
-// router.post('/login', async (req, res) => {
-//     try {
-//         const { username, password } = req.body;
-//         const match = await auth.authenticateUser(username, password);
-//         res.send(match);
-//     } catch (error) {
-//         res.status(401).json({ error: 'Authentication failed' });
-//     }
-// });
-router.get('/login', function(req, res, next) {
-    res.render('login');
-  });
+});
+router.post('/login', async function (req, res, next) {
+    try {
+        let { username, password } = req.body;
+
+        const hashed_password = md5(password.toString())
+        const sql = `SELECT * FROM users WHERE username = ? AND password = ?`
+        db.query(
+            sql, [username, hashed_password],
+            function (err, result, fields) {
+                if (err || !result.length) {
+                    res.send({ status: 0, data: err });
+                } else {
+                    let token = jwt.sign({ data: result }, 'secret')
+                    res.send({ status: 1, data: result, token: token });
+                }
+
+            })
+    } catch (error) {
+        res.send({ status: 0, error: error });
+    }
+});
 
 
 module.exports = router;

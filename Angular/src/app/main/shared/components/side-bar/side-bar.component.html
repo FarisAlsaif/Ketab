@@ -3,6 +3,6 @@
     <img src="assets/ketab-logo.png" alt="ketab-logo"
     height=100 width=auto>
     <ul>
-        <li *ngFor="let page of pages"><a [routerLink]="[page.path]">{{page.name}}</a></li>
+        <li *ngFor="let page of pages"><a [routerLink]="page.path">{{page.name}}</a></li>
     </ul>
 </div>
