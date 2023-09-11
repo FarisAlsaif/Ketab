@@ -2,7 +2,6 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 import { BooksService } from 'src/app/main/shared/services/books/books.service';
 import { HeaderService } from 'src/app/main/shared/services/header/header.service';
 import { book } from '../../shared/types';
-import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-books',
@@ -16,7 +15,6 @@ export class BooksComponent implements  OnInit {
   constructor(
     private headerService: HeaderService,
     private booksService: BooksService,
-    private authService: AuthService,
     ) { }
 
 
@@ -26,11 +24,6 @@ export class BooksComponent implements  OnInit {
       back: true,
     });
     this.books = this.booksService.getBooks();
-    this.authService.login().subscribe((res)=>{
-      console.log(res);
-    }
-    )
-    
 
   }
   ngOnDestroy(): void {

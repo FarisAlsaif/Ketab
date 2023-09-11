@@ -1,17 +1,32 @@
-const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
-const { getFirestore, Timestamp, FieldValue, Filter } = require('firebase-admin/firestore');
+const mysql = require('mysql');
+const dotenv = require('dotenv');
 
+dotenv.config({path: '.env'});
 
-const serviceAccount = require('./service-account-key');
-
-initializeApp({
-  credential: cert(serviceAccount)
+const db = mysql.createConnection({
+    host: process.env.HOST, 
+    user : process.env.DATABASE_USER,
+    password : process.env.DATABASE_PASSWORD,
+    database : process.env.DATABASE
+});
+db.connect((err) => {
+    if(err){
+        console.log('mysql not connected');
+        throw err;
+    }
+    console.log('mysql connected');
 });
 
-const db = getFirestore();
-const collections = db.collection("book");
+function get(table){
+    db.query("SELECT * FROM ??",table, (err, result, fields) => {
+        if(err){
+            console.log('mysql not connected');
+            throw err; 
+        }      
+        console.log(result);
+    });
+}
 
 
 
-
-module.exports = db;
+module.exports =  db ;
